@@ -1,6 +1,6 @@
 ---
 - name: Cypher Test
-  hosts: all
+  hosts: localhost
  
   tasks:
     - name: Print out a Cypher secret 
