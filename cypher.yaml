@@ -11,6 +11,6 @@
           {{ ansible_morpheus_url }}
           {{ lookup('cypher','secret=secret/testkey001',true)}} 
           
-      debug: 
-        msg: "{{ msg.split('\n') }}"       
-      tags: cypher_info
+      # debug: 
+      #   msg: "{{ msg.split('\n') }}"       
+      # tags: cypher_info
