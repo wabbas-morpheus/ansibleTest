@@ -9,7 +9,6 @@
           Morpheus Secret Test :
           --------------------------------
           {{ ansible_morpheus_url }}
-          {{ ansible_morpheus_token}}
           {{ lookup('cypher','secret=secret/squirrel')}} 
           
       debug: 
