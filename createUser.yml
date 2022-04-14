@@ -18,8 +18,8 @@
     become: yes
     become_method: su
     user:
-        name: "waqas2"
-        password:  "157CF1E08DB78FFBEC71A65A85C505FCACB575C78C36CBC911AAC17B53CEE804A189067A397E249835351159D0C9E800790C94A9B9F37E6655A9DF1B3B8E9BB8"
+        name: "waqas3"
+        password:  "test123"
         groups:
          - sudousers
         state: present
