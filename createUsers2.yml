@@ -5,7 +5,8 @@
     - name: Create a login user
       user:
         name: 'ansibleuser'
-        password: '157cf1e08db78ffbec71a65a85c505fcacb575c78c36cbc911aac17b53cee804a189067a397e249835351159d0c9e800790c94a9b9f37e6655a9df1b3b8e9bb8'
+        password: '$6$ks11f672sdewQeaE$tAuVuvvKYq2K2Yq2mExLOOuHy0e7MyzxOBndwWPBzysyJHvfZghH4mk.KGcPlfZ7besMaEObPtV1GobG
+WScm8.'
         groups: 
           - sudo
         state: absent
