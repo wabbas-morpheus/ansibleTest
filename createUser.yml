@@ -1,0 +1,55 @@
+---
+- hosts: all
+  #become: yes
+  #become_method: sudo
+  gather_facts: yes
+  tasks: 
+  - name: Make sure we have a 'sudousers' group
+    become: yes
+    become_method: su
+    group:
+        name: sudousers
+        state: present
+    when: ansible_facts['os_family'] == "RedHat" or
+          ansible_facts['os_family'] == "Debian" or
+          ansible_facts['os_family'] == "Suse"
+
+  - name: Create a login user on Linux
+    become: yes
+    become_method: su
+    user:
+        name: "waqas3"
+        password:  "test123"
+        groups:
+         - sudousers
+        state: present
+        shell: /bin/bash
+        system: no
+        createhome: yes
+    when: ansible_facts['os_family'] == "RedHat" or
+          ansible_facts['os_family'] == "Debian" or
+          ansible_facts['os_family'] == "Suse"
+
+  - name: Allow 'sudousers' group to have sudo
+    become: yes
+    become_method: su
+    lineinfile:
+        dest: /etc/sudoers
+        state: present
+        regexp: '^%sudousers'
+        line: '%sudousers ALL=(ALL) ALL'
+        validate: /usr/sbin/visudo -cf %s
+    when: ansible_facts['os_family'] == "RedHat" or
+          ansible_facts['os_family'] == "Debian" or
+          ansible_facts['os_family'] == "Suse"
+
+
+  - name: Create a login user on Windows
+    become_method: runas
+    ansible.windows.win_user:
+      name: "waqas"
+      password: "Password123?"
+      state: present
+      groups:
+        - Administrators
+    when: ansible_facts['os_family'] == "Windows"
