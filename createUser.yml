@@ -19,7 +19,7 @@
     become_method: su
     user:
         name: "waqas3"
-        password:  "test123"
+        password:  "$6$NSOF9DLRHyta8$xuzGnikGnWnEAM3LaOKKT9fSHF/ta/WtMNs1Mua4ZYcJbvFWgoUWFp1YZWuBVf98y5zSZSjWmDcgw8OZa5cQ41"
         groups:
          - sudousers
         state: present
