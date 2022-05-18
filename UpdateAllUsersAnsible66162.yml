@@ -5,9 +5,9 @@
   tasks:
     - name: Execute the script
       register: result
-      shell: sh AllUserUpdate.sh
+      shell: sh AllUserUpdate_case66162
       args:
-        chdir: /var/opt/morpheus/morpheus-local/repo/git/1ca619763d4098b14e3cde99f2f4880b/Terraform
+        chdir: /var/opt/morpheus/morpheus-local/repo/git/fa1eb481e857370c888c18e7bf13536c
 
     - name: Set Facts
       set_fact:
