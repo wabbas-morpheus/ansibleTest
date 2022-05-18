@@ -5,7 +5,7 @@
   tasks:
     - name: Execute the script
       register: result
-      shell: sh AllUserUpdate_case66162
+      shell: sh AllUserUpdate_case66162.sh
       args:
         chdir: /var/opt/morpheus/morpheus-local/repo/git/fa1eb481e857370c888c18e7bf13536c
 
