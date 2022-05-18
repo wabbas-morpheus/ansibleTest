@@ -1,0 +1,17 @@
+---
+- name: Transfer and execute a script.
+  hosts: 127.0.0.1
+  connection: local
+  tasks:
+    - name: Execute the script
+      register: result
+      shell: sh AllUserUpdate.sh
+      args:
+        chdir: /var/opt/morpheus/morpheus-local/repo/git/1ca619763d4098b14e3cde99f2f4880b/Terraform
+
+    - name: Set Facts
+      set_fact:
+        output: "{{ result.stdout }}"
+
+    - name: Display
+      debug: msg="{{ hostvars['127.0.0.1']['output'] }}"
