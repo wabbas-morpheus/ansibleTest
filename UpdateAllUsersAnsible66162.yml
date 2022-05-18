@@ -8,10 +8,3 @@
       shell: sh AllUserUpdate_case66162.sh
       args:
         chdir: /var/opt/morpheus/morpheus-local/repo/git/fa1eb481e857370c888c18e7bf13536c
-
-    - name: Set Facts
-      set_fact:
-        output: "{{ result.stdout }}"
-
-    - name: Display
-      debug: msg="{{ hostvars['127.0.0.1']['output'] }}"
