@@ -1,5 +1,5 @@
 ---
-- name: Transfer and execute a script2.
+- name: Transfer and execute a script3.
   hosts: 127.0.0.1
   connection: local
   tasks:
