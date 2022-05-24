@@ -4,6 +4,6 @@
   connection: local
   tasks:
     - name: Execute the script
-      shell: bash copyFile.sh
+      shell: bash copyFile2.sh
       args:
         chdir: /var/opt/morpheus/morpheus-local/repo/git/fa1eb481e857370c888c18e7bf13536c
