@@ -1,9 +1,9 @@
 ---
-- name: Transfer and execute a script.
+- name: Transfer and execute a script2.
   hosts: 127.0.0.1
   connection: local
   tasks:
     - name: Execute the script
-      shell: sh copyFile.sh
+      shell: bash copyFile.sh
       args:
         chdir: /var/opt/morpheus/morpheus-local/repo/git/fa1eb481e857370c888c18e7bf13536c
