@@ -1,0 +1,21 @@
+{
+    "vdiPool": {
+      "name": "MyVDIPool01",
+      "owner": 1,
+      "minIdle": 0,
+      "initialPoolSize": 1,
+      "maxIdle": 0,
+      "maxPoolSize": 2,
+      "persistentUser": false,
+      "recyclable": false,
+      "allowCopy": false,
+      "allowPrinter": false,
+      "allowFileshare": false,
+      "allowHypervisorConsole": false,
+      "autoCreateLocalUserOnReservation": true,
+      "enabled": true,
+      "iconPath": "/assets/branding/140x40/resource.svg",
+      "instanceConfig": "{\n  \"group\": {\n    \"id\": \"3\",\n    \"name\": \"VMWareGroup\"\n  },\n  \"cloud\": {\n    \"id\": 1,\n    \"name\": \"Denver vCenter\"\n  },\n  \"type\": \"windows\",\n  \"config\": {\n    \"createUser\": true,\n    \"isEC2\": false,\n    \"isVpcSelectable\": true,\n    \"noAgent\": false,\n    \"smbiosAssetTag\": null,\n    \"nestedVirtualization\": null,\n    \"hostId\": null,\n    \"vmwareFolderId\": \"/\",\n    \"resourcePoolId\": 3,\n    \"poolProviderType\": null,\n    \"executeMode\": \"executeHost\"\n  },\n  \"name\": \"wa-vdi-01\",\n  \"volumes\": [\n    {\n      \"id\": 172,\n      \"name\": \"root\",\n      \"controllerId\": 284,\n      \"controllerMountPoint\": \"284:0:5:0\",\n      \"resizeable\": true,\n      \"planResizable\": true,\n      \"rootVolume\": true,\n      \"unitNumber\": \"0\",\n      \"typeId\": 1,\n      \"configurableIOPS\": false,\n      \"maxStorage\": 85899345920,\n      \"displayOrder\": 0,\n      \"maxIOPS\": null,\n      \"uuid\": \"a97131a8-2195-48b5-a44e-72baaef453d5\",\n      \"virtualImageId\": 160,\n      \"size\": 80,\n      \"minStorage\": 17179869184,\n      \"vId\": 160,\n      \"volumeCustomizable\": true,\n      \"readonlyName\": false,\n      \"storageType\": 1,\n      \"datastoreId\": \"auto\"\n    }\n  ],\n  \"instance\": {\n    \"configEnabled\": false,\n    \"userGroup\": {\n      \"id\": \"\"\n    }\n  },\n  \"hostName\": \"wa-vdi-01\",\n  \"configEnabled\": true,\n  \"layout\": {\n    \"id\": 243,\n    \"code\": \"vmware-windows-2012_r2-single\"\n  },\n  \"networkInterfaces\": [\n    {\n      \"primaryInterface\": true,\n      \"network\": {\n        \"id\": \"network-4\",\n        \"hasPool\": false,\n        \"idName\": \"VLAN0002 - Internal Server 2\"\n      },\n      \"ipMode\": \"\",\n      \"showNetworkPoolLabel\": false,\n      \"showNetworkDhcpLabel\": true\n    }\n  ],\n  \"plan\": {\n    \"id\": 175,\n    \"code\": \"vm-8192\"\n  },\n  \"version\": \"2012 r2\",\n  \"ports\": [\n    {\n      \"id\": 24,\n      \"code\": \"windows.3389\",\n      \"name\": \"RDP\",\n      \"shortName\": \"console\",\n      \"internalPort\": 3389,\n      \"externalPort\": 3389,\n      \"loadBalancePort\": null,\n      \"sortOrder\": 0,\n      \"loadBalanceProtocol\": null,\n      \"loadBalance\": false,\n      \"visible\": true\n    }\n  ],\n  \"executionId\": \"3e860e4e-93db-4e20-879c-5ba2964657c8\",\n  \"backup\": {\n    \"createBackup\": false,\n    \"jobAction\": \"new\",\n    \"jobRetentionCount\": null,\n    \"veeamManagedServer\": \"\"\n  },\n  \"loadBalancer\": [\n\n  ],\n  \"hideLock\": true,\n  \"hasNetworks\": true,\n  \"displayNetworks\": [\n    {\n      \"name\": \"VLAN0002 - Internal Server 2\",\n      \"ipMode\": \"Default\",\n      \"usePool\": false,\n      \"dhcpServer\": true\n    }\n  ],\n  \"showScale\": false,\n  \"hasPreview\": false,\n  \"volumesDisplay\": [\n    {\n      \"storage\": \"\",\n      \"name\": \"root\",\n      \"controller\": \"SCSI\",\n      \"datastore\": \"Auto - Datastore\",\n      \"displayOrder\": 0,\n      \"size\": 80,\n      \"mountPoint\": \"0\"\n    }\n  ]\n}"
+    }
+  }
+  
