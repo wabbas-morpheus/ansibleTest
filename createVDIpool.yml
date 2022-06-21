@@ -1,7 +1,7 @@
 ---
 - name: Create VDI Pool
 - hosts: local
-- vars:
+  vars:
     vdi_data: "{{ lookup('file','input.json') | from_json }}"
   
   tasks:
