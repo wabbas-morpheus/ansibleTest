@@ -11,7 +11,7 @@
         method: POST
         headers:
           Content-Type: application/json
-          Authorization: BEARER "{{ lookup('cypher','secret=secret/my_token') }}"
+          Authorization: "{{ lookup('cypher','secret=secret/my_token2') }}"
         body_format: json
         body:
           vdiPool: "{{ vdi_data }}"
