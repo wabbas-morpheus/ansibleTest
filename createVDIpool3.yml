@@ -3,7 +3,7 @@
   hosts: localhost
   vars:
     vdi_data:
-      name: "MyVDI03"
+      name: {{ morpheus.customOptions.poolName }}
       description: "Created via Ansible"
       owner: 1
       minIdle: 0
@@ -28,7 +28,7 @@
           id: 1
           name: Denver vCenter
         type: windows
-        name: wa-vdi-001
+        name: {{ morpheus.customOptions.VDI_Instance_name}}
         instance:
           userGroup:
             id: ''
@@ -68,7 +68,7 @@
           readonlyName: false
           storageType: 1
           datastoreId: auto
-        hostName: wa-vdi-001
+        hostName: {{ morpheus.customOptions.VDI_Instance_name}}
         configEnabled: true
         layout:
           id: 243
@@ -100,7 +100,7 @@
           visible: true
         metadata:
         - name: myTag
-          value: myTagValue
+          value: {{ morpheus.customOptions.myTagField }}
         executionId: d445c10f-afcb-4a6c-8baf-e1870f235e7c
         backup:
           createBackup: false
