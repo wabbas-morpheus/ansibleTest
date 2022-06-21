@@ -22,7 +22,7 @@
       config:
         zoneId: 1
         instance:
-          name: "{{ morpheus.customOptions.VDI_Instance_name }}"
+          name: wa-inst-02
           cloud: Denver vCenter
           site:
             id: 3
@@ -30,7 +30,8 @@
           instanceType:
             code: windows
           labels:
-          - lbl1
+          - foo
+          - bar
           layout:
             id: 243
             code: vmware-windows-2012_r2-single
@@ -41,7 +42,6 @@
         config:
           resourcePoolId: 3
           noAgent: 'off'
-          smbiosAssetTag:
           nestedVirtualization: 'off'
           createUser: true
         volumes:
@@ -56,9 +56,17 @@
         - network:
             id: network-4
         layoutSize: 1
+        hostName: wa-inst-02
+        ports:
+        - name: RDP
+          port: 3389
+          lb: ''
         tags:
         - name: tagname1
           value: tagval1
+        - name: tagname2
+          value: tagval2
+
             
   
   tasks:
