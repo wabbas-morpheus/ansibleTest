@@ -70,7 +70,7 @@
           datastoreId: auto
         hostName: "{{ morpheus.customOptions.VDI_Instance_name}}"
         configEnabled: true
-        tags: "foo,bar"
+        labels: "foo,bar"
         layout:
           id: 243
           code: vmware-windows-2012_r2-single
