@@ -2,7 +2,7 @@
 - name: Create VDI Pool
   hosts: localhost
   vars:
-    vdi_data: "{{ lookup('file','input.json') | from_json }}"
+    vdi_data: "{{ lookup('file','input.json') | to_nice_json }}"
      
   
   tasks:
