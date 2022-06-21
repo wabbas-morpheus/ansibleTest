@@ -102,8 +102,8 @@
         - name: myTag
           value: "{{ morpheus.customOptions.myTagField }}"
         labels:
-          - myLabel1
-          - myLabel2
+        - myLabel1
+        - myLabel2
         executionId: d445c10f-afcb-4a6c-8baf-e1870f235e7c
         backup:
           createBackup: false
