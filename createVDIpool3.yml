@@ -20,117 +20,45 @@
       enabled: true
       iconPath: "/assets/branding/140x40/resource.svg"
       config:
-        myconfig:
-        group:
-          id: '3'
-          name: VMWareGroup
-        cloud:
-          id: 1
-          name: Denver vCenter
-        type: windows
-        name: "{{ morpheus.customOptions.VDI_Instance_name}}"
+        zoneId: 1
         instance:
-          userGroup:
-            id: ''
-          configEnabled: false
+          name: "{{ morpheus.customOptions.VDI_Instance_name }}"
+          cloud: Denver vCenter
+          site:
+            id: 3
+          type: windows
+          instanceType:
+            code: windows
+          labels:
+          - lbl1
+          layout:
+            id: 243
+            code: vmware-windows-2012_r2-single
+          plan:
+            id: 175
+            code: vm-8192
+            name: 2 CPU, 8GB Memory
         config:
-          createUser: true
-          isEC2: false
-          isVpcSelectable: true
-          noAgent: false
-          smbiosAssetTag:
-          nestedVirtualization:
-          hostId:
-          vmwareFolderId: "/"
           resourcePoolId: 3
-          poolProviderType:
-          executeMode: executeHost
+          noAgent: 'off'
+          smbiosAssetTag:
+          nestedVirtualization: 'off'
+          createUser: true
         volumes:
-        - id: 172
-          name: root
-          controllerId: 284
-          controllerMountPoint: 284:0:5:0
-          resizeable: true
-          planResizable: true
+        - id: -1
           rootVolume: true
-          unitNumber: '0'
-          typeId: 1
-          configurableIOPS: false
-          maxStorage: 85899345920
-          displayOrder: 0
-          maxIOPS:
-          uuid: a97131a8-2195-48b5-a44e-72baaef453d5
-          virtualImageId: 160
+          name: root
           size: 80
-          minStorage: 17179869184
-          vId: 160
-          volumeCustomizable: true
-          readonlyName: false
+          sizeId:
           storageType: 1
           datastoreId: auto
-        hostName: "{{ morpheus.customOptions.VDI_Instance_name}}"
-        configEnabled: true
-        layout:
-          id: 243
-          code: vmware-windows-2012_r2-single
         networkInterfaces:
-        - primaryInterface: true
-          network:
+        - network:
             id: network-4
-            hasPool: false
-            idName: VLAN0002 - Internal Server 2
-          ipMode: ''
-          showNetworkPoolLabel: false
-          showNetworkDhcpLabel: true
-        plan:
-          id: 175
-          code: vm-8192
-        version: 2012 r2
-        ports:
-        - id: 24
-          code: windows.3389
-          name: RDP
-          shortName: console
-          internalPort: 3389
-          externalPort: 3389
-          loadBalancePort:
-          sortOrder: 0
-          loadBalanceProtocol:
-          loadBalance: false
-          visible: true
-        metadata:
-        - name: myTag
-          value: "{{ morpheus.customOptions.myTagField }}"
-        labels: [
-          one,
-          two,
-          three,
-          four
-        ]
-        executionId: d445c10f-afcb-4a6c-8baf-e1870f235e7c
-        backup:
-          createBackup: false
-          jobAction: new
-          jobRetentionCount:
-          veeamManagedServer: ''
-        loadBalancer: []
-        hideLock: true
-        hasNetworks: true
-        displayNetworks:
-        - name: VLAN0002 - Internal Server 2
-          ipMode: Default
-          usePool: false
-          dhcpServer: true
-        showScale: false
-        hasPreview: false
-        volumesDisplay:
-        - storage: ''
-          name: root
-          controller: SCSI
-          datastore: Auto - Datastore
-          displayOrder: 0
-          size: 80
-          mountPoint: '0'
+        layoutSize: 1
+        tags:
+        - name: tagname1
+          value: tagval1
             
   
   tasks:
