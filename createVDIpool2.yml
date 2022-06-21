@@ -3,13 +3,14 @@
   hosts: localhost
   vars:
     vdi_data: "{{ lookup('file','input.json') | from_json }}"
+     
+  
   tasks:
     - name: debug message
       ansible.builtin.debug:
         msg: "json data = {{ vdi_data }}"
-        verbosity: 2  
-  
-  tasks:
+        verbosity: 2 
+        
     - name: Create VDI Pool
       uri:
         url: "{{ lookup('cypher','secret=secret/my_appliance') }}/api/vdi-pools"
