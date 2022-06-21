@@ -22,138 +22,110 @@
       config:
         myconfig:
         group:
-          id: "3"
-          name": "VMWareGroup"
-  
+          id: '3'
+          name: VMWareGroup
         cloud:
           id: 1
-          name: "Denver vCenter"
-        
-        type: "windows"
-        name: "wa-vdi-003"
+          name: Denver vCenter
+        type: windows
+        name: wa-vdi-001
         instance:
           userGroup:
-            id: ""
-    
-          configEnabled": false
-  
-       config":
-         createUser: true
-         isEC2: false
-         isVpcSelectable: true
-         noAgent: false
-         smbiosAssetTag: null
-         nestedVirtualization: null
-         hostId: null
-         vmwareFolderId: "/"
-         resourcePoolId: 3
-         poolProviderType: null
-         executeMode: "executeHost"
-      
-  "volumes": [
-    {
-      "id": 172,
-      "name": "root",
-      "controllerId": 284,
-      "controllerMountPoint": "284:0:5:0",
-      "resizeable": true,
-      "planResizable": true,
-      "rootVolume": true,
-      "unitNumber": "0",
-      "typeId": 1,
-      "configurableIOPS": false,
-      "maxStorage": 85899345920,
-      "displayOrder": 0,
-      "maxIOPS": null,
-      "uuid": "a97131a8-2195-48b5-a44e-72baaef453d5",
-      "virtualImageId": 160,
-      "size": 80,
-      "minStorage": 17179869184,
-      "vId": 160,
-      "volumeCustomizable": true,
-      "readonlyName": false,
-      "storageType": 1,
-      "datastoreId": "auto"
-    }
-  ],
-  "hostName": "wa-vdi-001",
-  "configEnabled": true,
-  "layout": {
-    "id": 243,
-    "code": "vmware-windows-2012_r2-single"
-  },
-  "networkInterfaces": [
-    {
-      "primaryInterface": true,
-      "network": {
-        "id": "network-4",
-        "hasPool": false,
-        "idName": "VLAN0002 - Internal Server 2"
-      },
-      "ipMode": "",
-      "showNetworkPoolLabel": false,
-      "showNetworkDhcpLabel": true
-    }
-  ],
-  "plan": {
-    "id": 175,
-    "code": "vm-8192"
-  },
-  "version": "2012 r2",
-  "ports": [
-    {
-      "id": 24,
-      "code": "windows.3389",
-      "name": "RDP",
-      "shortName": "console",
-      "internalPort": 3389,
-      "externalPort": 3389,
-      "loadBalancePort": null,
-      "sortOrder": 0,
-      "loadBalanceProtocol": null,
-      "loadBalance": false,
-      "visible": true
-    }
-  ],
-  "metadata": [
-    {
-      "name": "myTag",
-      "value": "myTagValue"
-    }
-  ],
-  "executionId": "d445c10f-afcb-4a6c-8baf-e1870f235e7c",
-  "backup": {
-    "createBackup": false,
-    "jobAction": "new",
-    "jobRetentionCount": null,
-    "veeamManagedServer": ""
-  },
-  "loadBalancer": [],
-  "hideLock": true,
-  "hasNetworks": true,
-  "displayNetworks": [
-    {
-      "name": "VLAN0002 - Internal Server 2",
-      "ipMode": "Default",
-      "usePool": false,
-      "dhcpServer": true
-    }
-  ],
-  "showScale": false,
-  "hasPreview": false,
-  "volumesDisplay": [
-    {
-      "storage": "",
-      "name": "root",
-      "controller": "SCSI",
-      "datastore": "Auto - Datastore",
-      "displayOrder": 0,
-      "size": 80,
-      "mountPoint": "0"
-    }
-  ]
-}
-     
+            id: ''
+          configEnabled: false
+        config:
+          createUser: true
+          isEC2: false
+          isVpcSelectable: true
+          noAgent: false
+          smbiosAssetTag:
+          nestedVirtualization:
+          hostId:
+          vmwareFolderId: "/"
+          resourcePoolId: 3
+          poolProviderType:
+          executeMode: executeHost
+        volumes:
+        - id: 172
+          name: root
+          controllerId: 284
+          controllerMountPoint: 284:0:5:0
+          resizeable: true
+          planResizable: true
+          rootVolume: true
+          unitNumber: '0'
+          typeId: 1
+          configurableIOPS: false
+          maxStorage: 85899345920
+          displayOrder: 0
+          maxIOPS:
+          uuid: a97131a8-2195-48b5-a44e-72baaef453d5
+          virtualImageId: 160
+          size: 80
+          minStorage: 17179869184
+          vId: 160
+          volumeCustomizable: true
+          readonlyName: false
+          storageType: 1
+          datastoreId: auto
+        hostName: wa-vdi-001
+        configEnabled: true
+        layout:
+          id: 243
+          code: vmware-windows-2012_r2-single
+        networkInterfaces:
+        - primaryInterface: true
+          network:
+            id: network-4
+            hasPool: false
+            idName: VLAN0002 - Internal Server 2
+          ipMode: ''
+          showNetworkPoolLabel: false
+          showNetworkDhcpLabel: true
+        plan:
+          id: 175
+          code: vm-8192
+        version: 2012 r2
+        ports:
+        - id: 24
+          code: windows.3389
+          name: RDP
+          shortName: console
+          internalPort: 3389
+          externalPort: 3389
+          loadBalancePort:
+          sortOrder: 0
+          loadBalanceProtocol:
+          loadBalance: false
+          visible: true
+        metadata:
+        - name: myTag
+          value: myTagValue
+        executionId: d445c10f-afcb-4a6c-8baf-e1870f235e7c
+        backup:
+          createBackup: false
+          jobAction: new
+          jobRetentionCount:
+          veeamManagedServer: ''
+        loadBalancer: []
+        hideLock: true
+        hasNetworks: true
+        displayNetworks:
+        - name: VLAN0002 - Internal Server 2
+          ipMode: Default
+          usePool: false
+          dhcpServer: true
+        showScale: false
+        hasPreview: false
+        volumesDisplay:
+        - storage: ''
+          name: root
+          controller: SCSI
+          datastore: Auto - Datastore
+          displayOrder: 0
+          size: 80
+          mountPoint: '0'
+            
   
   tasks:
     - name: debug message
