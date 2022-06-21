@@ -9,7 +9,7 @@
       minIdle: 0
       initialPoolSize: 1
       maxIdle: 0
-      maxPoolSize: 2
+      maxPoolSize: 5
       persistentUser: false
       recyclable: false
       allowCopy: false
@@ -101,7 +101,7 @@
           loadBalanceProtocol:
           loadBalance: false
           visible: true
-        tags:
+        metadata:
         - name: myTag
           value: "{{ morpheus.customOptions.myTagField }}"
         executionId: d445c10f-afcb-4a6c-8baf-e1870f235e7c
