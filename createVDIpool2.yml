@@ -1,0 +1,22 @@
+---
+- name: Create VDI Pool
+  hosts: localhost
+  vars:
+    vdi_data: "{{ lookup('file','input.json') | from_json }}"
+    debug: 
+        msg: "{{ vdi_data }}" 
+  
+  tasks:
+    - name: Create VDI Pool
+      uri:
+        url: "{{ lookup('cypher','secret=secret/my_appliance') }}/api/vdi-pools"
+        method: POST
+        headers:
+          Content-Type: application/json
+          Authorization: "{{ lookup('cypher','secret=secret/my_token2') }}"
+        body_format: json
+        body:
+          vdiPool: "{{ vdi_data }}"
+        validate_certs: false
+        return_content: true
+        status_code: 200
