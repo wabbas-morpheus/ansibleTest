@@ -20,7 +20,6 @@
       enabled: true
       iconPath: "/assets/branding/140x40/resource.svg"
       config:
-        myconfig:
         group:
           id: '3'
           name: VMWareGroup
