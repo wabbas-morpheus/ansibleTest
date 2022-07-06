@@ -3,4 +3,4 @@
   tasks:
   - name: Wait until the file
     ansible.builtin.wait_for:
-    path: /tmp/foo
+      path: /tmp/foo
