@@ -1,0 +1,11 @@
+---
+- hosts: all
+  tasks:
+  - name: Wait for foo
+    debug:
+      msg:
+      - "waiting for foo"
+  
+  - name: Wait until the file /tmp/foo is present before continuing
+  ansible.builtin.wait_for:
+    path: /tmp/foo
