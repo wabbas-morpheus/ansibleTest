@@ -44,12 +44,12 @@
           ansible_facts['os_family'] == "Suse"
 
 
-  - name: Create a login user on Windows
-    become_method: runas
-    ansible.windows.win_user:
-      name: "waqas"
-      password: "Password123?"
-      state: present
-      groups:
-        - Administrators
-    when: ansible_facts['os_family'] == "Windows"
+#   - name: Create a login user on Windows
+#     become_method: runas
+#     ansible.windows.win_user:
+#       name: "waqas"
+#       password: "Password123?"
+#       state: present
+#       groups:
+#         - Administrators
+#     when: ansible_facts['os_family'] == "Windows"
