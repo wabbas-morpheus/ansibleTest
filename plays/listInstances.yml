@@ -1,0 +1,15 @@
+---
+- name: Create VDI Pool
+  hosts: localhost
+  tasks:
+    - name: List Instances
+      uri:
+        url: "{{ lookup('cypher','secret=secret/my_appliance') }}/api/instances"
+        method: POST
+        headers:
+          Content-Type: application/json
+          Authorization: "{{ lookup('cypher','secret=secret/my_token2') }}"
+        body_format: json
+        validate_certs: false
+        return_content: true
+        status_code: 200
