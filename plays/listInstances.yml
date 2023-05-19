@@ -5,7 +5,7 @@
     - name: List Instances
       uri:
         url: "{{ lookup('cypher','secret=secret/my_appliance') }}/api/instances"
-        method: POST
+        method: GET
         headers:
           Content-Type: application/json
           Authorization: "{{ lookup('cypher','secret=secret/my_token2') }}"
