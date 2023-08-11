@@ -1,0 +1,12 @@
+---
+- hosts: all
+  tasks:
+    - name: Reboot node and wait for it to restart
+      ansible.builtin.reboot:
+        msg: "Reboot initiated by Ansible"
+        reboot_timeout: 300
+        test_command: hostname
+ 
+    - name: Output message
+      debug:
+        msg: "Next task"
