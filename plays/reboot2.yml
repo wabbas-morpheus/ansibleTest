@@ -1,5 +1,6 @@
 ---
 - hosts: all
+  become: yes
   tasks:
     - name: Reboot node and wait for it to restart
       ansible.builtin.reboot:
