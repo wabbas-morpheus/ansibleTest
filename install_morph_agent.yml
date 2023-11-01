@@ -26,28 +26,14 @@
     - name: Print some debug information 
       vars: 
         msg: |
-          Module Variables ("vars"):
+          Agent Install:
           --------------------------------
-          {{ vars | to_nice_json }} 
+          {{ morpheus.container.cloudConfig.agentInstall | regex_replace('.*\"(https://.*?apiKey=[a-f0-9-]+)\".*', '\\1') }} 
           
-          Environment Variables ("environment"):
-          --------------------------------
-          {{ environment | to_nice_json }} 
-          
-          GROUP NAMES Variables ("group_names"):
-          --------------------------------
-          {{ group_names | to_nice_json }}
-          
-          GROUPS Variables ("groups"):
-          --------------------------------
-          {{ groups | to_nice_json }}
-          
-          HOST Variables ("hostvars"):
-          --------------------------------
-          {{ hostvars | to_nice_json }} 
+         
     
-      debug: 
-        msg: "{{ msg.split('\n') }}"       
-      tags: debug_info
+      # debug: 
+      #   msg: "{{ msg.split('\n') }}"       
+      # tags: debug_info
 
 
