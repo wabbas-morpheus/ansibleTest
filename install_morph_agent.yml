@@ -8,6 +8,12 @@
     - name: Print the URL
       ansible.builtin.debug:
         var: api_url
+        
+    - name: Create a directory if it does not exist
+      ansible.builtin.file:
+        path: /tmp/software
+        state: directory
+        mode: '0755'
  
     - name: Download content from URL
       ansible.builtin.get_url:
