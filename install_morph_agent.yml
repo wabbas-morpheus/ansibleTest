@@ -12,6 +12,7 @@
     - name: Download content from URL
       ansible.builtin.get_url:
         url: "{{ api_url }}"
+        validate_certs: false
         dest: /tmp/software/morpheus_agent.sh
         mode: "0755"
  
