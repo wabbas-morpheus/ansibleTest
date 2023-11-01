@@ -1,0 +1,53 @@
+# - name: Extract URL
+#           ansible.builtin.set_fact:
+#             api_url: "{{ morpheus.container.cloudConfig.agentInstall | regex_replace('.*\"(https://.*?apiKey=[a-f0-9-]+)\".*', '\\1') }}"
+ 
+#         - name: Print the URL
+#           ansible.builtin.debug:
+#             var: api_url
+ 
+#         - name: Download content from URL
+#           ansible.builtin.get_url:
+#             url: "{{ api_url }}"
+#             dest: /tmp/software/morpheus_agent.sh
+#             mode: "0755"
+ 
+#         - name: Install Morpheus Agent
+#           ansible.builtin.shell:
+#             cmd: /tmp/software/morpheus_agent.sh
+#           args:
+#             creates: /usr/bin/morpheus-node-ctl
+
+---
+- name: dump all
+  hosts: localhost
+ 
+  tasks:
+    - name: Print some debug information 
+      vars: 
+        msg: |
+          Module Variables ("vars"):
+          --------------------------------
+          {{ vars | to_nice_json }} 
+          
+          Environment Variables ("environment"):
+          --------------------------------
+          {{ environment | to_nice_json }} 
+          
+          GROUP NAMES Variables ("group_names"):
+          --------------------------------
+          {{ group_names | to_nice_json }}
+          
+          GROUPS Variables ("groups"):
+          --------------------------------
+          {{ groups | to_nice_json }}
+          
+          HOST Variables ("hostvars"):
+          --------------------------------
+          {{ hostvars | to_nice_json }} 
+    
+      debug: 
+        msg: "{{ msg.split('\n') }}"       
+      tags: debug_info
+
+
