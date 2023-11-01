@@ -20,7 +20,7 @@
 
 ---
 - name: dump all
-  hosts: localhost
+  hosts: all
  
   tasks:
     - name: Print some debug information 
