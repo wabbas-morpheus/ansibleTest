@@ -9,16 +9,16 @@
       ansible.builtin.debug:
         var: api_url
  
-        # - name: Download content from URL
-        #   ansible.builtin.get_url:
-        #     url: "{{ api_url }}"
-        #     dest: /tmp/software/morpheus_agent.sh
-        #     mode: "0755"
+    - name: Download content from URL
+      ansible.builtin.get_url:
+        url: "{{ api_url }}"
+        dest: /tmp/software/morpheus_agent.sh
+        mode: "0755"
  
-        # - name: Install Morpheus Agent
-        #   ansible.builtin.shell:
-        #     cmd: /tmp/software/morpheus_agent.sh
-        #   args:
-        #     creates: /usr/bin/morpheus-node-ctl
+    - name: Install Morpheus Agent
+      ansible.builtin.shell:
+        cmd: /tmp/software/morpheus_agent.sh
+      args:
+        creates: /usr/bin/morpheus-node-ctl
 
 
