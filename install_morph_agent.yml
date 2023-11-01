@@ -1,8 +1,7 @@
 ---
 - name: Extract URL
   ansible.builtin.set_fact: null
-  api_url: "{{ morpheus.container.cloudConfig.agentInstall |
-    regex_replace('.*\"(https://.*?apiKey=[a-f0-9-]+)\".*', '\\1') }}"
+  api_url: "{{ morpheus.container.cloudConfig.agentInstall | regex_replace('.*\"(https://.*?apiKey=[a-f0-9-]+)\".*', '\\1') }}"
 - name: Print the URL
   ansible.builtin.debug: null
   var: api_url
