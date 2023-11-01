@@ -3,11 +3,11 @@
   hosts: all   
   tasks:
     - name: Extract URL
-      ansible.builtin.set_fact: null
-      api_url: "{{ morpheus.container.cloudConfig.agentInstall | regex_replace('.*\"(https://.*?apiKey=[a-f0-9-]+)\".*', '\\1') }}"
+      ansible.builtin.set_fact:
+        api_url: "{{ morpheus.container.cloudConfig.agentInstall | regex_replace('.*\"(https://.*?apiKey=[a-f0-9-]+)\".*', '\\1') }}"
     - name: Print the URL
-      ansible.builtin.debug: null
-      var: api_url
+      ansible.builtin.debug:
+        var: api_url
  
         # - name: Download content from URL
         #   ansible.builtin.get_url:
