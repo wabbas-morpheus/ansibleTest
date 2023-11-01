@@ -20,20 +20,17 @@
 
 ---
 - name: dump all
-  hosts: all
+  hosts: localhost
  
   tasks:
     - name: Print some debug information 
       vars: 
         msg: |
-          Agent Install:
+          Module Variables ("vars"):
           --------------------------------
-          {{ morpheus.container.cloudConfig.agentInstall | regex_replace('.*\"(https://.*?apiKey=[a-f0-9-]+)\".*', '\\1') }} 
-          
-         
-    
-      # debug: 
-      #   msg: "{{ msg.split('\n') }}"       
-      # tags: debug_info
-
+         {{ morpheus.container.cloudConfig.agentInstall | regex_replace('.*\"(https://.*?apiKey=[a-f0-9-]+)\".*', '\\1') }}
+        
+      debug: 
+        msg: "{{ msg.split('\n') }}"       
+      tags: debug_info
 
