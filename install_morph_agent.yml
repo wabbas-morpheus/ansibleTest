@@ -15,8 +15,8 @@
   tasks:
 
     - name: Show facts available on the system
-    ansible.builtin.debug:
-      var: ansible_facts
+      ansible.builtin.debug:
+        var: ansible_facts
     
     - name: Extract URL
       ansible.builtin.set_fact:
