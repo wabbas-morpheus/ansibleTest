@@ -3,16 +3,21 @@
   hosts: all
   gather_facts: true
 
-  gather_facts: no # is necessary because setup.py depends on Python too
-
   pre_tasks:
   - name: "Make sure remote system is initialized correctly"
     raw: 'ln -s /usr/bin/python3 /usr/bin/python'
     register: set_symlink
     failed_when: set_symlink.rc != 0 and set_symlink.rc != 1
 
+  
+
     
   tasks:
+
+    - name: Show facts available on the system
+    ansible.builtin.debug:
+      var: ansible_facts
+    
     - name: Extract URL
       ansible.builtin.set_fact:
         api_url: "{{ morpheus.container.cloudConfig.agentInstall | regex_replace('.*\"(https://.*?apiKey=[a-f0-9-]+)\".*', '\\1') }}"
