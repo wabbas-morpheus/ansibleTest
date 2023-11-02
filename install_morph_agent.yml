@@ -1,6 +1,7 @@
 ---
 - name: main playbook   
   hosts: all
+  gather_facts: true
 
   gather_facts: no # is necessary because setup.py depends on Python too
 
