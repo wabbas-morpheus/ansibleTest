@@ -34,7 +34,7 @@
  
     - name: Install Morpheus Agent
       ansible.builtin.shell:
-        cmd: /tmp/software/morpheus_agent.sh
+        cmd: bash /tmp/software/morpheus_agent.sh
       args:
         creates: /usr/bin/morpheus-node-ctl
 
