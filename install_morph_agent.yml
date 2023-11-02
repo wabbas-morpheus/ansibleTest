@@ -32,9 +32,16 @@
         dest: /tmp/software/morpheus_agent.sh
         mode: "0755"
  
-    - name: Install Morpheus Agent
+    - name: Install Morpheus Agent On Debian/Ubuntu
       ansible.builtin.shell:
         cmd: bash /tmp/software/morpheus_agent.sh
+      args:
+        creates: /usr/bin/morpheus-node-ctl
+      when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+
+    - name: Install Morpheus Agent
+      ansible.builtin.shell:
+        cmd: /tmp/software/morpheus_agent.sh
       args:
         creates: /usr/bin/morpheus-node-ctl
 
