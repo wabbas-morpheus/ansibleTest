@@ -9,8 +9,13 @@
       msg:
       - "Hello World"
   
-  - name: Write hostname to file
-    ansible.builtin.copy:
-      content: "Teardown host\n"
-      dest: /tmp/teardown_task_ansible.txt
+  - name: Write to file
+    lineinfile:
+      path: /tmp/teardown_task_ansible.txt
+      line: "Teardown host\n"
       create: yes
+  
+  # - name: Write hostname to file
+  #   ansible.builtin.copy:
+  #     content: "Teardown host\n"
+  #     d: /tmp/teardown_task_ansible.txt
