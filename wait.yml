@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  tasks:
+  - name: Pause for 5 minutes
+    ansible.builtin.pause:
+      minutes: 5
+  - name: Waited for 5 min
+    debug:
+      msg:
+      - "Hello World"
+  
+  - name: Write hostname to file
+  ansible.builtin.copy:
+    content: "Teardown host {{morpheus['server']['hostname']}}""
+    dest: /tmp/teardown_task_ansible.txt
