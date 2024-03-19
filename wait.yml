@@ -10,6 +10,6 @@
       - "Hello World"
   
   - name: Write hostname to file
-  ansible.builtin.copy:
+    ansible.builtin.copy:
     content: "Teardown host {{morpheus['server']['hostname']}}"
     dest: /tmp/teardown_task_ansible.txt
