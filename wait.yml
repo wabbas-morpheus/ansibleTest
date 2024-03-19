@@ -3,7 +3,7 @@
   tasks:
   - name: Pause for 5 minutes
     ansible.builtin.pause:
-      minutes: 5
+      seconds: 5
   - name: Waited for 5 min
     debug:
       msg:
