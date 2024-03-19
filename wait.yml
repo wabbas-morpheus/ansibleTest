@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: localhost
   tasks:
   - name: Pause for 5 minutes
     ansible.builtin.pause:
