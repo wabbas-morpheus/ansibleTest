@@ -1,9 +1,9 @@
 ---
 - hosts: localhost
   tasks:
-  - name: Pause for 10 minutes
+  - name: Pause for 1 minutes
     ansible.builtin.pause:
-      minutes: 10
+      minutes: 1
   - name: Waited for 10 min
     debug:
       msg:
