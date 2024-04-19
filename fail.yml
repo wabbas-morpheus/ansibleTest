@@ -1,7 +1,7 @@
 ---
 - hosts: all
   vars:
-    myVar: fail
+    myVar: Notfail
   tasks:
     - name: Fail Ansible Task
       ansible.builtin.fail:
