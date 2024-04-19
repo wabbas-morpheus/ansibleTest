@@ -1,0 +1,9 @@
+---
+- hosts: all
+  vars:
+    myVar: dont_fail
+  tasks:
+    - name: Fail Ansible Task
+      ansible.builtin.fail:
+        msg: The task will fail based on the value of the myVar
+      when: myVar == "fail"
