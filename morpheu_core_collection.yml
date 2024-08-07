@@ -5,10 +5,10 @@
   tasks:
     - name: Get Morpheus appliance facts
       morpheus.core.appliance_facts:
-        morpheus_url: "{{ lookup('cypher','secret=secret/my_appliance') }}"
-        api_token: "{{ lookup('cypher','secret=secret/my_token_2024') }}"
+        morpheus_url: "{{ lookup('cypher', 'secret=secret/my_appliance') }}"
+        api_token: "{{ lookup('cypher', 'secret=secret/my_token_2024') }}"
       register: morpheus_facts
- 
+
     - name: Print Morpheus appliance facts
       debug:
         var: morpheus_facts
