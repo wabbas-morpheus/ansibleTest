@@ -1,7 +1,6 @@
-plugin: morpheus_inventory
-groups:
-  - name: morphtest
-    searchtype: label
-    searchstring: whateverlabel
-morpheus_url: "{{ lookup('cypher','secret=secret/my_appliance') }}"
-morpheus_api_key: "{{ lookup('cypher','secret=secret/my_token_2024') }}"
+- name: Example Playbook Using Morpheus Inventory
+  hosts: localhost
+  tasks:
+    - name: Example Task
+      debug:
+        msg: "This is a test task using Morpheus Inventory."
