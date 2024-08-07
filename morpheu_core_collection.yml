@@ -2,8 +2,7 @@
 - name: Manage Morpheus Clouds
   hosts: localhost
   gather_facts: false
-  collections:
-    - morpheus.core
+  plugin: morpheus.core.morpheus_inventory
   tasks:
     - name: Get Morpheus appliance facts
       morpheus.core.appliance_facts:
