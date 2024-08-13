@@ -1,6 +1,6 @@
 ---
 - name: Print container hostname
-  hosts: docker
+  hosts: localhost
   gather_facts: no
   tasks:
     - name: Print hostname of the container
