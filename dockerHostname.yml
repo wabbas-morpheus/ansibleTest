@@ -1,6 +1,6 @@
 ---
 - name: Print container hostname
-  hosts: myNewGroup
+  hosts: all
   gather_facts: no
   tasks:
     - name: Print hostname of the container
