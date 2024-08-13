@@ -1,0 +1,12 @@
+---
+- name: Print container hostname
+  hosts: docker
+  gather_facts: no
+  tasks:
+    - name: Print hostname of the container
+      command: hostname
+      register: container_hostname
+
+    - name: Display container hostname
+      debug:
+        msg: "Container hostname is: {{ container_hostname.stdout }}"
