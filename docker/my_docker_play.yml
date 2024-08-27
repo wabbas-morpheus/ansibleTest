@@ -1,6 +1,7 @@
 ---
 - name: Print container hostname
-  hosts: all
+  hosts: docker_containers
+  connection: docker
   gather_facts: no
   tasks:
     - name: Print hostname of the container
