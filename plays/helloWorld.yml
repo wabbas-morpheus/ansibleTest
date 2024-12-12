@@ -1,7 +1,7 @@
 ---
-- hosts: all
+- name: Simple Ansible Playbook to Print a Message
+  hosts: all
   tasks:
-    - name: Print Hello World
+    - name: Print a welcome message
       debug:
-        msg:
-          - Hello World2
+        msg: "Hello, this is a message from Ansible!"
