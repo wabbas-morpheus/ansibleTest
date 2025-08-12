@@ -1,7 +1,16 @@
 ---
-- hosts: all
+- name: Playbook that runs for 2 minutes
+  hosts: all
+  gather_facts: no
   tasks:
-    - name: Wait until the file exists (start after 1 minute delay)
-      ansible.builtin.wait_for:
-        path: /tmp/foo
-        delay: 60   # Wait 60 seconds before starting the check
+    - name: Start message
+      debug:
+        msg: "Starting the 2-minute playbook."
+
+    - name: Wait for 2 minutes
+      pause:
+        minutes: 2
+
+    - name: End message
+      debug:
+        msg: "2 minutes have passed. Playbook finished."
