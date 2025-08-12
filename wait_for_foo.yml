@@ -1,6 +1,6 @@
 ---
 - name: Playbook that runs for 2 minutes
-  hosts: all
+  hosts: localhost
   gather_facts: no
   tasks:
     - name: Start message
