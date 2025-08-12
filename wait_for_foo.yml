@@ -1,6 +1,7 @@
 ---
 - hosts: all
   tasks:
-  - name: Wait until the file
-    ansible.builtin.wait_for:
-      path: /tmp/foo
+    - name: Wait until the file exists (start after 1 minute delay)
+      ansible.builtin.wait_for:
+        path: /tmp/foo
+        delay: 60   # Wait 60 seconds before starting the check
