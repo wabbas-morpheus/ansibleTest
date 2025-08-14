@@ -1,0 +1,23 @@
+---
+- name: Call API with Bearer Token
+  hosts: localhost
+  gather_facts: false
+
+  vars:
+    api_url: "https://api.example.com/data"
+    bearer_token: "YOUR_BEARER_TOKEN"
+
+  tasks:
+    - name: Make GET request to API
+      uri:
+        url: "{{ api_url }}"
+        method: GET
+        headers:
+          Authorization: "Bearer {{ bearer_token }}"
+        return_content: yes
+        status_code: 200
+      register: api_response
+
+    - name: Show API response
+      debug:
+        msg: "{{ api_response.content }}"
