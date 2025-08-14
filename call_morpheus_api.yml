@@ -16,6 +16,7 @@
           Authorization: "{{ lookup('cypher','secret=secret/morph_api_token_2025') }}"
         return_content: yes
         status_code: 200
+        validate_certs: no
       register: api_response
 
     - name: Show API response
