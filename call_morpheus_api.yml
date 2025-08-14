@@ -5,7 +5,7 @@
 
   vars:
     api_url:  "{{ lookup('cypher','secret=secret/my_appliance') }}/api/instances?max=25&offset=0&showDeleted=false&details=false"
-    bearer_token: "YOUR_BEARER_TOKEN"
+    bearer_token: "{{ lookup('cypher','secret=secret/morph_api_token_2025') }}"
 
   tasks:
     - name: Make GET request to API
@@ -13,7 +13,7 @@
         url: "{{ api_url }}"
         method: GET
         headers:
-          Authorization: "{{ lookup('cypher','secret=secret/morph_api_token_2025') }}"
+          Authorization: "Bearer {{ bearer_token }}"
         return_content: yes
         status_code: 200
         validate_certs: no
