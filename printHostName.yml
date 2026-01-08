@@ -1,0 +1,9 @@
+---
+- name: Print inventory hostnames
+  hosts: all
+  gather_facts: no
+
+  tasks:
+    - name: Show inventory hostname
+      debug:
+        msg: "{{ inventory_hostname }}"
