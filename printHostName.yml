@@ -1,6 +1,6 @@
 ---
 - name: Print inventory hostnames
-  hosts: all
+  hosts: localhost
   gather_facts: no
 
   tasks:
