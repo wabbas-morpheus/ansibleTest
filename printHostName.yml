@@ -1,6 +1,6 @@
 ---
 - name: Print hostname locally
-  hosts: localhost
+  hosts: all
   connection: local
   gather_facts: yes
 
